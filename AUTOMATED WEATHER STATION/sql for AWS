@@ -1,0 +1,43 @@
+temperature_humidity_sensor_db=# CREATE DATABASE TEMPERATURE_HUMIDITY_SENSOR_DB;
+//DATABASE
+
+
+temperature_humidity_sensor_db=# CREATE TABLE USERS(
+id SERIAL PRIMARY KEY,
+username string,
+password string
+);
+
+//1st table for admins
+temperature_humidity_sensor_db=# CREATE TABLE sensor_data (
+    id SERIAL PRIMARY KEY,
+    temperature FLOAT,
+    humidity FLOAT,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+//the information table
+
+//all the tables 
+temperature_humidity_sensor_db=# \dt
+            List of relations
+ Schema |    Name     | Type  |  Owner   
+--------+-------------+-------+----------
+ public | sensor_data | table | postgres
+ public | stations    | table | postgres
+ public | users       | table | postgres
+(3 rows)
+
+temperature_humidity_sensor_db=# 
+//the statios table hdefines each station coordinates
+temperature_humidity_sensor_db=# select * from stations;
+ station_id |   name    |     coordinates     
+------------+-----------+---------------------
+          1 | Station 1 | (40.7128,-74.006)
+          2 | Station 2 | (34.0522,-118.2437)
+(2 rows)
+
+temperature_humidity_sensor_db=# 
+
